@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="logo.png">
+  <title>Fika Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    :root {
+      --primary: #00e0ff;
+      --accent: #00ff87;
+      --dark: #121212;
+      --light: #f4f4f4;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .logo {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: var(--primary);
+    }
+
+    .sub-title {
+      font-size: 1.1em;
+      color: #bbb;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 30px auto 50px;
+    }
+
+    .intro h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    .handi {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+}
+.handi img {
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+    .content, .contact {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.content img {
+  max-width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+    .left p {
+      margin: 20px 0;
+      font-size: 16px;
+      color: #ddd;
+    }
+    .typing-text {
+      display: inline;
+      font-weight: bold;
+      color: #00ffe1;
+      border-right: 2px solid #00ffe1;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink-caret 0.7s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .right img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ffe1;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #00ffe1;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00ccc1;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .left, .right {
+        max-width: 100%;
+      }
+    .typing {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.5em;
+      height: 30px;
+    }
+
+    .produk-section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .produk-section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .produk-card {
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .produk-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+    }
+
+    .produk-card i {
+      font-size: 2.5em;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .produk-card h3 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.3em;
+    }
+
+    .produk-card p {
+      color: #ccc;
+      margin: 10px 0 20px;
+      font-size: 0.95em;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--primary);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+      .unggulan-section {
+  padding: 50px 20px;
+  background: #101010;
+  text-align: center;
+}
+
+.unggulan-section h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 30px;
+}
+
+.unggulan-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.unggulan-card {
+  background-color: #1e1e1e;
+  border: 2px solid var(--accent);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0,255,204,0.2);
+  transition: all 0.3s ease;
+}
+
+.unggulan-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,255,204,0.4);
+}
+
+.unggulan-card i {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.unggulan-card h3 {
+  color: var(--primary);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.unggulan-card p {
+  color: #ccc;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+}
+    .info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+.info-card {
+  background: #222;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #fff;
+  min-width: 200px;
+  text-align: left;
+  font-size: 1.1em;
+  box-shadow: inset 0 0 5px #0f0, 0 0 5px #0ff;
+}
+      .tentang-section {
+  background-color: #0f0f0f;
+  color: #eee;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.tentang-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.tentang-section h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.tentang-section p {
+  font-size: 1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+  </style>
+</head>
+<body>
+  </header>
+  <div class="left">
+      <h1>Hai, It's Handi</h1>
+      <h2>I'm a <span class="typing-text" id="typed"></span></h2>
+      <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
+    </div>
+    
+<div class="info-section">
+  <div class="info-card">
+    <strong>Today:</strong> <span id="today-date">Loading...</span>
+  </div>
+  <div class="info-card">
+    <strong>Digital Clock</strong> <span id="jamWIB" style="font-size: 20px; font-weight: bold;">Loading...</span>
+  </div>
+  <div class="info-card">
+    <strong>Your Battery:</strong> <span id="battery-status">Loading...</span>
+  </div>
+  <div class="info-card">
+    <strong>Your Region:</strong> <span id="user-region">Loading...</span>
+  </div>
+</div>
+      
+<section class="unggulan-section">
+  <h2>Produk Unggulan Kami</h2>
+  <div class="unggulan-grid">
+    <div class="unggulan-card">
+      <i class="fas fa-fire"></i>
+      <h3>Panel Bot WhatsApp</h3>
+      <p>Kelola bot WhatsApp, kamu bisa menggunakan script bot wa sendiri ataupun beli dari Fika Store.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20panel%20bot" class="btn">Lihat Detail</a>
+    </div>
+    <div class="unggulan-card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>VPS Premium</h3>
+      <p>Vps R1, C1 - R64, C32. Cocok untuk bot berat & server MC, dengan kecepatan dan uptime maksimal.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20VPS%20premium" class="btn">Lihat Detail</a>
+    </div>
+    <div class="unggulan-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Nomor Kosong</h3>
+      <p>Nokos WhatsApp premium & reguler, cocok buat daftar/daur ulang bot & akun.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20nokos" class="btn">Lihat Detail</a>
+    </div>
+  </div>
+</section>
+
+<section class="produk-section">
+  <h2>List Jasa & Produk Kami</h2>
+  <div class="produk-grid">
+    <div class="produk-card">
+      <i class="fas fa-server"></i>
+      <h3>Jasa Setup Server</h3>
+      <p>Setup server Minecraft, Bot WhatsApp, dll. Full support & fast respon.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20jasa%20setup%20server" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Nomor Kosong</h3>
+      <p>Nokos WhatsApp premium & reguler, cocok buat daftar/daur ulang bot & akun.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20nokos" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-cloud"></i>
+      <h3>VPS & Hosting</h3>
+      <p>VPS murah, stabil, cocok untuk bot, server game, maupun keperluan dev.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20VPS%20dan%20hosting" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-robot"></i>
+      <h3>Script Bot WhatsApp</h3>
+      <p>Script Bot WhatsApp full fitur, anti delay, bisa custom sesuai kebutuhan kamu.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20script%20bot%20WhatsApp" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-code"></i>
+      <h3>Edit & Fix Script</h3>
+      <p>Perbaikan atau edit script bot WhatsApp, web, panel, dan lainnya.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20jasa%20edit%20script" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-globe"></i>
+      <h3>Bikin Website</h3>
+      <p>Web portfolio, toko online, tools, landing page, semua bisa dibuat!</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20jasa%20bikin%20website" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-dragon"></i>
+      <h3>Install Panel Pterodactyl</h3>
+      <p>Jasa install panel Pterodactyl siap pakai, cocok buat manage bot, MC server, dan hosting lainnya.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20jasa%20install%20panel" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-cube"></i>
+      <h3>Server Minecraft</h3>
+      <p>Setup server Minecraft Java & Bedrock, lengkap dengan plugin, sistem VIP, dan anti lag.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20server%20Minecraft" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-globe"></i>
+      <h3>Domain Murah</h3>
+      <p>Dapatkan domain .com, .id, .xyz, dan lainnya dengan harga terjangkau dan proses cepat.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20membeli%20domain" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="produk-card">
+      <i class="fas fa-store"></i>
+      <h3>Digital Marketplace</h3>
+      <p>Tempat terbaik untuk berbagai layanan digital: pulsa, saldo e-wallet, dan produk unik lainnya.</p>
+      <a href="https://wa.me/6287717274346?text=Hai%20Handi!%20Saya%20ingin%20bertanya%20tentang%20Fika%20Store" class="btn">QNA With Handi</a>
+    </div>
+  </div>
+</section>
+
+
+    <section class="tentang-section" id="tentang">
+  <div class="tentang-container">
+    <h2>Tentang Kami</h2>
+    <p>
+      <strong>Fika-Ai | Digital Marketplace</strong> adalah platform digital modern yang menyediakan layanan serba ada, mulai dari <b>panel Pterodactyl, VPS hosting, nomor kosong, jasa setup server MC, install bot WhatsApp</b> hingga <b>edit script bot</b>.
+    </p>
+    <p></p>
+      kami bekerja sesuai jam kerja yaitu pukul
+    <strong>08.00 Pagi, WIB</strong> Sampai Pukul <strong>22.00 Malam, WIB</strong>
+    </p><p>Selengkapnya~ di bawah ini!</p>
+    <a href="kontak.html" class="btn">Contact Us</a>
+    <a href="dev.html" class="btn">About Fika Store</a>
+  </div>
+    </section>
+  
+  <footer>
+    &copy; <span id="year"></span> Fika Store | <a href="https://wa.me/6287717274346">Hubungi Kami</a>
+  </footer>
+
+  <script>
+  // Format tanggal + hari lokal
+  const today = new Date();
+  const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  const bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  document.getElementById("today-date").textContent =
+    `${hari[today.getDay()]}, ${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`;
+
+  // Battery info
+  navigator.getBattery().then(battery => {
+    function updateBatteryStatus() {
+      const level = Math.round(battery.level * 100) + "%";
+      document.getElementById("battery-status").textContent = level;
+    }
+    updateBatteryStatus();
+    battery.addEventListener("levelchange", updateBatteryStatus);
+  });
+
+  // Region detection
+      function updateJamWIB() {
+    const now = new Date();
+    // Konversi ke WIB (GMT+7)
+    const wib = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+    const jam = String(wib.getUTCHours()).padStart(2, '0');
+    const menit = String(wib.getUTCMinutes()).padStart(2, '0');
+    const detik = String(wib.getUTCSeconds()).padStart(2, '0');
+    document.getElementById('jamWIB').textContent = `WIB: ${jam}:${menit}:${detik}`;
+  }
+
+  setInterval(updateJamWIB, 1000);
+  updateJamWIB();
+    
+  const region = Intl.DateTimeFormat().resolvedOptions().locale;
+  document.getElementById("user-region").textContent = region;
+  
+  const textList = ["Developer Website", "Designer", "Programmer", "Dev Server Mc"];
+    const typed = document.getElementById("typed");
+    let listIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function typeEffect() {
+      const currentText = textList[listIndex];
+      if (typing) {
+        if (charIndex < currentText.length) {
+          typed.textContent += currentText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500);
+        }
+      } else {
+        if (charIndex > 0) {
+          typed.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = true;
+          listIndex = (listIndex + 1) % textList.length;
+          setTimeout(typeEffect, 500);
+        }
+      }
+    }
+
+    typeEffect();
+ 
+    // year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
